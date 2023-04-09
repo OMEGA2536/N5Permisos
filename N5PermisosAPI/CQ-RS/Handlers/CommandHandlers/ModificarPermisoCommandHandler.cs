@@ -13,7 +13,7 @@ namespace N5PermisosAPI.CQRS.Handlers.CommandHandlers
         }
 
         public async Task<bool> Handle(ModificarPermisoCommand request, CancellationToken cancellationToken)
-        {
+        { 
             _unitOfWork.Permisos.UpdateAsync(request.Permiso);
 
             try
