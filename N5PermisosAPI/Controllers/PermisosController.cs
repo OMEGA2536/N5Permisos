@@ -27,8 +27,8 @@ namespace N5PermisosAPI.Controllers
             try
             {
                 var permisos = await _mediator.Send(new GetPermisosQuery());
-                //await _logEvent.LogEventToElasticsearchAsync("GetPermisos", permisos);
-                //await _logEvent.LogEventToKafkaAsync("get", permisos);
+                await _logEvent.LogEventToElasticsearchAsync("GetPermisos", permisos);
+                await _logEvent.LogEventToKafkaAsync("get", permisos);
                 return Ok(permisos);
             }
             catch (Exception ex)
@@ -44,8 +44,8 @@ namespace N5PermisosAPI.Controllers
             try
             {
                 int id = await _mediator.Send(new SolicitarPermisoCommand(permiso));
-                //await _logEvent.LogEventToElasticsearchAsync("SolicitarPermiso", permiso);
-                //await _logEvent.LogEventToKafkaAsync("request", permiso);
+                await _logEvent.LogEventToElasticsearchAsync("SolicitarPermiso", permiso);
+                await _logEvent.LogEventToKafkaAsync("request", permiso);
                 return Ok(id);
             }
             catch (Exception ex)
@@ -63,8 +63,8 @@ namespace N5PermisosAPI.Controllers
                 bool result = await _mediator.Send(new ModificarPermisoCommand(id, permiso));
                 if (result)
                 {
-                    //await _logEvent.LogEventToElasticsearchAsync("ModificarPermiso", permiso);
-                    //await _logEvent.LogEventToKafkaAsync("modify", permiso);
+                    await _logEvent.LogEventToElasticsearchAsync("ModificarPermiso", permiso);
+                    await _logEvent.LogEventToKafkaAsync("modify", permiso);
                     return Ok(true);
                 }
                 else
@@ -84,8 +84,6 @@ namespace N5PermisosAPI.Controllers
             try
             {
                 int id = await _mediator.Send(new CrearTipoPermisoCommand(tipoPermiso));
-                //await _logEvent.LogEventToElasticsearchAsync("CrearTipoPermiso", tipoPermiso);
-                //await _logEvent.LogEventToKafkaAsync("create", tipoPermiso);
                 return Ok(id);
             }
             catch (Exception ex)
