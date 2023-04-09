@@ -1,17 +1,90 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\walte\\source\\repos\\N5PermisosAPI\\N5PermisosAPI\\N5PermisosAPI.csproj": {}
+    "E:\\N5\\N5Permisos\\N5PermisosAPI\\N5PermisosAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\walte\\source\\repos\\N5PermisosAPI\\N5PermisosAPI\\N5PermisosAPI.csproj": {
+    "E:\\N5\\N5Permisos\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\walte\\source\\repos\\N5PermisosAPI\\N5PermisosAPI\\N5PermisosAPI.csproj",
-        "projectName": "N5PermisosAPI",
-        "projectPath": "C:\\Users\\walte\\source\\repos\\N5PermisosAPI\\N5PermisosAPI\\N5PermisosAPI.csproj",
+        "projectUniqueName": "E:\\N5\\N5Permisos\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "E:\\N5\\N5Permisos\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\walte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\walte\\source\\repos\\N5PermisosAPI\\N5PermisosAPI\\obj\\",
+        "outputPath": "E:\\N5\\N5Permisos\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\walte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\N5\\N5Permisos\\Data\\Data.csproj": {
+                "projectPath": "E:\\N5\\N5Permisos\\Data\\Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Confluent.Kafka": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.17.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\N5\\N5Permisos\\Data\\Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\N5\\N5Permisos\\Data\\Data.csproj",
+        "projectName": "Data",
+        "projectPath": "E:\\N5\\N5Permisos\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\walte\\.nuget\\packages\\",
+        "outputPath": "E:\\N5\\N5Permisos\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -44,21 +117,7 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Confluent.Kafka": {
-              "target": "Package",
-              "version": "[2.0.2, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[11.1.0, )"
-            },
-            "MediatR.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[11.1.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.4, )"
             },
@@ -71,14 +130,83 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\N5\\N5Permisos\\N5PermisosAPI\\N5PermisosAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\N5\\N5Permisos\\N5PermisosAPI\\N5PermisosAPI.csproj",
+        "projectName": "N5PermisosAPI",
+        "projectPath": "E:\\N5\\N5Permisos\\N5PermisosAPI\\N5PermisosAPI.csproj",
+        "packagesPath": "C:\\Users\\walte\\.nuget\\packages\\",
+        "outputPath": "E:\\N5\\N5Permisos\\N5PermisosAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\walte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\N5\\N5Permisos\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "E:\\N5\\N5Permisos\\DataAccess\\DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.17.2, )"
-            },
-            "NEST": {
-              "target": "Package",
-              "version": "[7.17.5, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

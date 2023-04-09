@@ -31,5 +31,9 @@ namespace N5PermisosAPI.DataAccess.Repositories
         {
             _context.Set<TEntity>().Update(entity);
         }
+        public async Task<TEntity?> GetByIdAsync(int id)
+        {
+            return await _context.Set<TEntity>().FindAsync(id);
+        }
     }
 }

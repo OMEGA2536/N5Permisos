@@ -7,10 +7,12 @@ namespace N5PermisosAPI.DataAccess.Repositories
     {
         private readonly N5PermisosAPIContext _context;
         private IPermisosRepository _permisos;
+        public ITiposPermisoRepository TiposPermiso { get; private set; }
 
         public UnitOfWork(N5PermisosAPIContext context)
         {
             _context = context;
+            TiposPermiso = new TiposPermisoRepository(context);
         }
 
         public IPermisosRepository Permisos => _permisos ??= new PermisosRepository(_context);

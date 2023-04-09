@@ -32,7 +32,8 @@ namespace N5PermisosAPI.DataAccess.Repositories
             {
                 var eventLog = new
                 {
-                    EventType = eventType,
+                    Id = Guid.NewGuid(),
+                    OperationName = eventType,
                     EventData = eventData,
                     Timestamp = DateTime.UtcNow
                 };
@@ -42,7 +43,7 @@ namespace N5PermisosAPI.DataAccess.Repositories
                     Value = JsonSerializer.Serialize(eventLog)
                 };
 
-                await producer.ProduceAsync("event_log", message);
+                await producer.ProduceAsync(eventType, message);
             }
         }
     }

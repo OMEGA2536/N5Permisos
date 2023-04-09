@@ -1,0 +1,14 @@
+E:\N5\N5Permisos\Data\bin\Debug\net6.0\Data.deps.json
+E:\N5\N5Permisos\Data\bin\Debug\net6.0\Data.runtimeconfig.json
+E:\N5\N5Permisos\Data\bin\Debug\net6.0\Data.dll
+E:\N5\N5Permisos\Data\bin\Debug\net6.0\Data.pdb
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\Data.csproj.AssemblyReference.cache
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\Data.AssemblyInfoInputs.cache
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\Data.AssemblyInfo.cs
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\Data.csproj.CoreCompileInputs.cache
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\Data.dll
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\refint\Data.dll
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\Data.pdb
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache
+E:\N5\N5Permisos\Data\obj\Debug\net6.0\ref\Data.dll

@@ -5,6 +5,7 @@
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task CreateAsync(TEntity entity);
         void UpdateAsync(TEntity entity);
+        Task<TEntity> GetByIdAsync(int id);
         bool PermisoExists(int id);
     }
 }
