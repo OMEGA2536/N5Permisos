@@ -21,7 +21,6 @@ builder.Services.AddDbContext<N5PermisosAPIContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IPermisosRepository, PermisosRepository>();
 builder.Services.AddScoped<ILogEvent, LogEvent>();
-//builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddMediatR(typeof(N5PermisosAPI.CQRS.Queries.GetPermisosQuery).Assembly);
 
 

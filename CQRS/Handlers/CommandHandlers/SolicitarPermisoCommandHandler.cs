@@ -11,6 +11,7 @@ namespace N5PermisosAPI.CQRS.Handlers.CommandHandlers
         {
             _unitOfWork = unitOfWork;
         }
+
         public async Task<int> Handle(SolicitarPermisoCommand request, CancellationToken cancellationToken)
         {
             var tipoPermiso = await _unitOfWork.TiposPermiso.GetByIdAsync(request.Permiso.TipoPermisoId);

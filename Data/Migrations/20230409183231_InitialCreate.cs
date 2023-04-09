@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace N5PermisosAPI.Migrations
+namespace Data.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

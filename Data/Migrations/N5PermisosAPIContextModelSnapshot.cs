@@ -8,7 +8,7 @@ using N5PermisosAPI.Data;
 
 #nullable disable
 
-namespace N5PermisosAPI.Migrations
+namespace Data.Migrations
 {
     [DbContext(typeof(N5PermisosAPIContext))]
     partial class N5PermisosAPIContextModelSnapshot : ModelSnapshot

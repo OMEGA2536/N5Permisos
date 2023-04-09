@@ -9,10 +9,10 @@ using N5PermisosAPI.Data;
 
 #nullable disable
 
-namespace N5PermisosAPI.Migrations
+namespace Data.Migrations
 {
     [DbContext(typeof(N5PermisosAPIContext))]
-    [Migration("20230405040954_InitialCreate")]
+    [Migration("20230409183231_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
