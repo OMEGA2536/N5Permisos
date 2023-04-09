@@ -4,6 +4,7 @@ using N5PermisosAPI.DataAccess.Interfaces;
 using MediatR;
 using N5PermisosAPI.CQRS.Queries;
 using N5PermisosAPI.CQRS.Commands;
+using CQRS.Commands;
 
 namespace N5PermisosAPI.Controllers
 {
@@ -75,6 +76,22 @@ namespace N5PermisosAPI.Controllers
             {
                 return BadRequest(ex.Message);
             }
-        }       
+        }
+
+        [HttpPost("tipos-permiso")]
+        public async Task<ActionResult<int>> CrearTipoPermiso(TipoPermiso tipoPermiso)
+        {
+            try
+            {
+                int id = await _mediator.Send(new CrearTipoPermisoCommand(tipoPermiso));
+                //await _logEvent.LogEventToElasticsearchAsync("CrearTipoPermiso", tipoPermiso);
+                //await _logEvent.LogEventToKafkaAsync("create", tipoPermiso);
+                return Ok(id);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
