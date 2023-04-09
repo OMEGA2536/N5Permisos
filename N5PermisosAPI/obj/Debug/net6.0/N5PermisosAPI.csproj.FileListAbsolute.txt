@@ -230,3 +230,5 @@ E:\N5\N5Permisos\N5PermisosAPI\obj\Debug\net6.0\refint\N5PermisosAPI.dll
 E:\N5\N5Permisos\N5PermisosAPI\obj\Debug\net6.0\N5PermisosAPI.pdb
 E:\N5\N5Permisos\N5PermisosAPI\obj\Debug\net6.0\N5PermisosAPI.genruntimeconfig.cache
 E:\N5\N5Permisos\N5PermisosAPI\obj\Debug\net6.0\ref\N5PermisosAPI.dll
+E:\N5\N5Permisos\N5PermisosAPI\bin\Debug\net6.0\CQRS.dll
+E:\N5\N5Permisos\N5PermisosAPI\bin\Debug\net6.0\CQRS.pdb

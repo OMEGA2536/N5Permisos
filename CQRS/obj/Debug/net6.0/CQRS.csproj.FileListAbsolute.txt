@@ -1,0 +1,17 @@
+E:\N5\N5Permisos\CQRS\bin\Debug\net6.0\CQRS.deps.json
+E:\N5\N5Permisos\CQRS\bin\Debug\net6.0\CQRS.dll
+E:\N5\N5Permisos\CQRS\bin\Debug\net6.0\CQRS.pdb
+E:\N5\N5Permisos\CQRS\bin\Debug\net6.0\Data.dll
+E:\N5\N5Permisos\CQRS\bin\Debug\net6.0\DataAccess.dll
+E:\N5\N5Permisos\CQRS\bin\Debug\net6.0\DataAccess.pdb
+E:\N5\N5Permisos\CQRS\bin\Debug\net6.0\Data.pdb
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\CQRS.csproj.AssemblyReference.cache
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\CQRS.GeneratedMSBuildEditorConfig.editorconfig
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\CQRS.AssemblyInfoInputs.cache
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\CQRS.AssemblyInfo.cs
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\CQRS.csproj.CoreCompileInputs.cache
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\CQRS.csproj.CopyComplete
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\CQRS.dll
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\refint\CQRS.dll
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\CQRS.pdb
+E:\N5\N5Permisos\CQRS\obj\Debug\net6.0\ref\CQRS.dll

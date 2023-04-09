@@ -5,8 +5,8 @@ using Confluent.Kafka;
 using N5PermisosAPI.Models;
 using N5PermisosAPI.DataAccess.Interfaces;
 using N5PermisosAPI.DataAccess.Repositories;
-using MediatR;
 using System.Reflection;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +21,9 @@ builder.Services.AddDbContext<N5PermisosAPIContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IPermisosRepository, PermisosRepository>();
 builder.Services.AddScoped<ILogEvent, LogEvent>();
-builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+//builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.AddMediatR(typeof(N5PermisosAPI.CQRS.Queries.GetPermisosQuery).Assembly);
+
 
 // Add configuratión Elasticsearch 
 var settings = builder.Configuration.GetSection("Elasticsearch").Get<ElasticsearchSettings>();
