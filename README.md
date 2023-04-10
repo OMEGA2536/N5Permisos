@@ -19,7 +19,7 @@
   "AllowedHosts": "*"
 }
 #docker
-docker build -t n5dockerapi .
+docker build -t n5dockerapi -f Dockerfile .
 #test
 N5PermisosAPI.Tests
   Pruebas en grupo:3
