@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using N5PermisosAPI.Models;
-using N5PermisosAPI.DataAccess.Interfaces;
 using MediatR;
 using N5PermisosAPI.CQRS.Queries;
 using N5PermisosAPI.CQRS.Commands;
@@ -13,11 +12,9 @@ namespace N5PermisosAPI.Controllers
     public class PermisosController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly ILogEvent _logEvent;
-        public PermisosController(IMediator mediator, ILogEvent logEvent)
+        public PermisosController(IMediator mediator)
         {
             _mediator = mediator;
-            _logEvent = logEvent;      
         }
            
 
@@ -25,11 +22,8 @@ namespace N5PermisosAPI.Controllers
         public async Task<ActionResult<IEnumerable<Permiso>>> GetPermisos()
         {
             try
-            {
-                var permisos = await _mediator.Send(new GetPermisosQuery());
-                await _logEvent.LogEventToElasticsearchAsync("GetPermisos", permisos);
-                await _logEvent.LogEventToKafkaAsync("get", permisos);
-                return Ok(permisos);
+            {               
+                return Ok(await _mediator.Send(new GetPermisosQuery()));
             }
             catch (Exception ex)
             {
@@ -42,11 +36,8 @@ namespace N5PermisosAPI.Controllers
         public async Task<ActionResult<Permiso>> SolicitarPermiso(Permiso permiso)
         {
             try
-            {
-                int id = await _mediator.Send(new SolicitarPermisoCommand(permiso));
-                await _logEvent.LogEventToElasticsearchAsync("SolicitarPermiso", permiso);
-                await _logEvent.LogEventToKafkaAsync("request", permiso);
-                return Ok(id);
+            {                
+                return Ok(await _mediator.Send(new SolicitarPermisoCommand(permiso)));
             }
             catch (Exception ex)
             {
@@ -60,17 +51,7 @@ namespace N5PermisosAPI.Controllers
         {           
             try
             {
-                bool result = await _mediator.Send(new ModificarPermisoCommand(id, permiso));
-                if (result)
-                {
-                    await _logEvent.LogEventToElasticsearchAsync("ModificarPermiso", permiso);
-                    await _logEvent.LogEventToKafkaAsync("modify", permiso);
-                    return Ok(true);
-                }
-                else
-                {
-                    return NotFound();
-                }
+                return Ok(await _mediator.Send(new ModificarPermisoCommand(id, permiso)));
             }            
             catch (Exception ex)
             {
@@ -83,8 +64,7 @@ namespace N5PermisosAPI.Controllers
         {
             try
             {
-                int id = await _mediator.Send(new CrearTipoPermisoCommand(tipoPermiso));
-                return Ok(id);
+                return Ok(await _mediator.Send(new CrearTipoPermisoCommand(tipoPermiso)));
             }
             catch (Exception ex)
             {

@@ -16,9 +16,9 @@ namespace N5PermisosAPI.Tests
 {
     public class PermisosControllerTests
     {
-        private PermisosController CreateController(Mock<IMediator> mediatorMock, Mock<ILogEvent> logEventMock)
+        private PermisosController CreateController(Mock<IMediator> mediatorMock)
         {
-            return new PermisosController(mediatorMock.Object, logEventMock.Object);
+            return new PermisosController(mediatorMock.Object);
         }
 
         [Fact]
@@ -26,7 +26,6 @@ namespace N5PermisosAPI.Tests
         {
             // Arrange
             var mediatorMock = new Mock<IMediator>();
-            var logEventMock = new Mock<ILogEvent>();
 
             mediatorMock.Setup(m => m.Send(It.IsAny<GetPermisosQuery>(), It.IsAny<CancellationToken>()))
              .ReturnsAsync(new List<Permiso>
@@ -45,7 +44,7 @@ namespace N5PermisosAPI.Tests
                 }
              });
 
-            var controller = CreateController(mediatorMock, logEventMock);
+            var controller = CreateController(mediatorMock);
 
             // Act
             ActionResult<IEnumerable<Permiso>> result = await controller.GetPermisos();
@@ -62,7 +61,6 @@ namespace N5PermisosAPI.Tests
         {
             // Arrange
             var mediatorMock = new Mock<IMediator>();
-            var logEventMock = new Mock<ILogEvent>();
             var permiso = new Permiso
             {
                 NombreEmpleado = "Test",
@@ -73,7 +71,7 @@ namespace N5PermisosAPI.Tests
 
             mediatorMock.Setup(mediator => mediator.Send(It.IsAny<SolicitarPermisoCommand>(), It.IsAny<CancellationToken>()))
                          .ReturnsAsync(1);
-            var controller = CreateController(mediatorMock, logEventMock);
+            var controller = CreateController(mediatorMock);
             // Act
             var result = await controller.SolicitarPermiso(permiso);
 
@@ -88,7 +86,6 @@ namespace N5PermisosAPI.Tests
         {
             // Arrange
             var mediatorMock = new Mock<IMediator>();
-            var logEventMock = new Mock<ILogEvent>();
             int id = 1;
             var permiso = new Permiso
             {
@@ -101,7 +98,7 @@ namespace N5PermisosAPI.Tests
 
             mediatorMock.Setup(mediator => mediator.Send(It.IsAny<ModificarPermisoCommand>(), It.IsAny<CancellationToken>()))
                          .ReturnsAsync(true);
-            var controller = CreateController(mediatorMock, logEventMock);
+            var controller = CreateController(mediatorMock);
             // Act
             var result = await controller.ModificarPermiso(id, permiso);
 

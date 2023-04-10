@@ -195,3 +195,7 @@ E:\N5\N5Permisos\N5PermisosAPI.Tests\obj\Debug\net6.0\refint\N5PermisosAPI.Tests
 E:\N5\N5Permisos\N5PermisosAPI.Tests\obj\Debug\net6.0\N5PermisosAPI.Tests.pdb
 E:\N5\N5Permisos\N5PermisosAPI.Tests\obj\Debug\net6.0\N5PermisosAPI.Tests.genruntimeconfig.cache
 E:\N5\N5Permisos\N5PermisosAPI.Tests\obj\Debug\net6.0\ref\N5PermisosAPI.Tests.dll
+E:\N5\N5Permisos\N5PermisosAPI.Tests\bin\Debug\net6.0\Microsoft.Extensions.Logging.EventLog.dll
+E:\N5\N5Permisos\N5PermisosAPI.Tests\bin\Debug\net6.0\System.Diagnostics.EventLog.dll
+E:\N5\N5Permisos\N5PermisosAPI.Tests\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+E:\N5\N5Permisos\N5PermisosAPI.Tests\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
