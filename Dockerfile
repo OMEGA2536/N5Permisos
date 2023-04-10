@@ -11,13 +11,30 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["N5PermisosAPI/N5PermisosAPI.csproj", "N5PermisosAPI/"]
+COPY ["CQRS/CQRS.csproj", "CQRS/"]
+COPY ["DataAccess/DataAccess.csproj", "DataAccess/"]
+COPY ["Data/Data.csproj", "Data/"]
 RUN dotnet restore "N5PermisosAPI/N5PermisosAPI.csproj"
 COPY . .
-WORKDIR "/src/N5PermisosAPI"
-RUN dotnet build "N5PermisosAPI.csproj" -c Release -o /app/build
+WORKDIR "/src/Data"
+RUN dotnet build "Data.csproj" -c Release -o /app/build/Data
+WORKDIR "/src/DataAccess"
+RUN dotnet build "DataAccess.csproj" -c Release -o /app/build/DataAccess
+WORKDIR "/src/CQRS"
+RUN dotnet build "CQRS.csproj" -c Release -o /app/build/CQRS
+WORKDIR "/src"
+RUN dotnet build "N5PermisosAPI/N5PermisosAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
+WORKDIR "/src/Data"
+RUN dotnet publish "Data.csproj" -c Release -o /app/publish/Data /p:UseAppHost=false
+WORKDIR "/src/DataAccess"
+RUN dotnet publish "DataAccess.csproj" -c Release -o /app/publish/DataAccess /p:UseAppHost=false
+WORKDIR "/src/CQRS"
+RUN dotnet publish "CQRS.csproj" -c Release -o /app/publish/CQRS /p:UseAppHost=false
+WORKDIR "/src/N5PermisosAPI"
 RUN dotnet publish "N5PermisosAPI.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
 
 FROM base AS final
 WORKDIR /app
